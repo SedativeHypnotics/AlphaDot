@@ -2,4 +2,4 @@
 ---
 ```shell
 python main.py -i [IMAGE]
-```shell
+```
