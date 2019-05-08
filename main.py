@@ -2,6 +2,7 @@ from __future__ import print_function
 import numpy as np
 import cv2
 import argparse
+import os
 
 ASCII_CHARSET = ['.', ',', ':', ';', '+', '*', '?', '%', 'S', '#', '@']
 
@@ -74,4 +75,8 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument("-i", "--image", help="path to the image")
     args = vars(ap.parse_args())
-    printImage(args["image"])
+    path = args["image"]
+    if os.path.exists(path):
+        printImage(path)
+    else:
+        raise Exception("File not found in the specified path")
